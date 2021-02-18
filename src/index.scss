@@ -1,0 +1,112 @@
+$color: white;
+$background-color-body: #009688;
+$background-color-board: black;
+$alive-color: white;
+$alive-hover-color: red;
+$border-color: darkGray;
+$cell-size: 10px;
+$light-cell: #92de34;
+$dark-cell: #69bc22;
+
+body {
+  color: $color;
+  background: linear-gradient(to bottom, rgb(0 0 0 / 74%), rgb(25 25 25 / 22%)),
+    url(./game-bg.jpg);
+  text-align: center;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+table {
+  margin: 0 auto 20px auto;
+  border-collapse: collapse;
+  background-color: $background-color-board;
+}
+
+td {
+  width: $cell-size;
+  height: $cell-size;
+  border: 1px solid $border-color;
+}
+
+.alive {
+  background-color: $alive-color;
+
+  &:hover {
+    background-color: $alive-hover-color;
+  }
+}
+
+.dead {
+  &:hover {
+    background-color: $border-color;
+  }
+}
+.text-font {
+  font-family: cursive;
+}
+button {
+  margin: 20px 10px;
+  padding: 10px 15px;
+  color: #fff;
+  outline: none;
+  cursor: pointer;
+  width: 171px;
+  font-weight: bold;
+  height: 65px;
+  background: #1d150c;
+  box-shadow: 0px 0px 16px #e85000;
+  border-radius: 30px;
+  z-index: 3;
+  font-family: cursive;
+  border: none;
+  transition: all 1s ease-in-out;
+  border-image: linear-gradient(#360154, #d442d5) 30;
+
+  &:hover {
+    color: $alive-hover-color;
+  }
+}
+
+.flexRow {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.upperControls,
+.lowerControls {
+  margin: auto;
+}
+
+.speed-control {
+  border-radius: 50px;
+  border: none;
+  margin: 5px;
+}
+
+button:hover {
+  background-image: linear-gradient(
+    145deg,
+    transparent 10%,
+    $dark-cell 10% 20%,
+    transparent 20% 30%,
+    $dark-cell 30% 40%,
+    transparent 40% 50%,
+    $dark-cell 50% 60%,
+    transparent 60% 70%,
+    $dark-cell 70% 80%,
+    transparent 80% 90%,
+    $dark-cell 90% 100%
+  );
+  animation: background 3s linear infinite;
+}
+
+@keyframes background {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 400px 0;
+  }
+}
